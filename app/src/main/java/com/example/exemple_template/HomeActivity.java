@@ -13,6 +13,7 @@ import com.example.exemple_template.a01_layout.L02_frameActivity;
 import com.example.exemple_template.a01_layout.L03_relativeActivity;
 import com.example.exemple_template.a03_animation.a01_loadingActivity;
 import com.example.exemple_template.a03_animation.a02_simpsonActivity;
+import com.example.exemple_template.a04_list.S01_ListViewActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class HomeActivity extends AppCompatActivity {
     Button btn_relative_layout;
     Button btn_animation_loading;
     Button btn_animation_simpson;
+    Button btn_list_view;
 
     // 2 Méthode init pour l'initialisation des widgets
     public  void  initUI(){
@@ -35,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         btn_relative_layout = findViewById(R.id.btn_relative_layout);
         btn_animation_loading = findViewById(R.id.btn_animation_loading);
         btn_animation_simpson = findViewById(R.id.btn_animation_simpson);
+        btn_list_view = findViewById(R.id.btn_list_view);
     }
 
     // 4 Méthode pour la gestion du bouton LinearLayout
@@ -87,6 +90,16 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    public void setBtn_list_view(){
+        btn_list_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, S01_ListViewActivity.class));
+            }
+        });
+
+    }
+
     /*
     Life Cycles
      */
@@ -102,6 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         setBtn_relative_layout();
         setBtn_animation_loading();
         setBtn_animation_simpson();
+        setBtn_list_view();
 
     }
 }

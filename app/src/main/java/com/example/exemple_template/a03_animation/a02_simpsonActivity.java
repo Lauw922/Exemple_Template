@@ -17,11 +17,22 @@ public class a02_simpsonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a02_simpson);
 
+        ImageView ib_simpson = findViewById(R.id.ib_simpson);
+        ImageView iv_bart = findViewById(R.id.iv_bart);
+        ImageView iv_homer = findViewById(R.id.iv_homer);
 
-        ImageView iv_simpson = findViewById(R.id.iv_simpson);
 
+        ib_simpson.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                ib_simpson.animate().alpha(1).rotation(3600).setDuration(2000);
+                iv_bart.animate().translationXBy(-3000).setDuration(4000);
+                iv_homer.animate().translationXBy(-3000).setDuration(5000);
 
-        iv_simpson.animate().alpha(1).rotation(3600).setDuration(2000);
+            }
+
+        });
+
 
     }
 }
